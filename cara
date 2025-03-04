@@ -1,0 +1,40 @@
+import pygame, sys
+from pygame.locals import *
+
+AMPLE = 1000
+ALT = 800
+TAMANY = (AMPLE,ALT)
+NEGRE = (0,0,0)
+VERMELL = (255,0,0,0)
+BLANC = (255,255,255)
+BLAU = (0, 87, 184)
+GROC = (255, 206, 0)
+VERD = (0, 159, 61)
+pygame.init()
+pantalla = pygame.display.set_mode(TAMANY)
+pygame.display.set_caption('Cercle')
+while True: # main game loop
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+    pantalla.fill(BLANC)
+
+    pygame.draw.circle(pantalla, VERD,(500,400),350,)
+    pygame.draw.polygon(pantalla, BLANC,((325,200),(400,370),(250,370)))
+    pygame.draw.polygon(pantalla, BLANC,((625,200),(700,370),(550,370)))
+    pygame.draw.circle(pantalla, NEGRE,(450,430),50,)
+    pygame.draw.circle(pantalla, NEGRE,(300,320),35,)
+    pygame.draw.circle(pantalla, NEGRE,(600,320),35,)
+    pygame.draw.ellipse(pantalla, NEGRE,(300, 500, 330, 150))
+    pygame.draw.circle(pantalla, VERMELL,(430,440),10,)
+    pygame.draw.circle(pantalla, VERMELL,(470,440),10,)
+    pygame.draw.circle(pantalla, VERD,(200,140),100,)
+    pygame.draw.circle(pantalla, VERD,(780,140),100,)
+    pygame.draw.circle(pantalla, BLANC,(780,140),50,)
+    pygame.draw.circle(pantalla, BLANC,(200,140),50,)
+
+
+
+    pygame.display.update()
